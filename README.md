@@ -58,3 +58,33 @@
 - **Безопасность**: mTLS, OAuth 2.0, минимизация данных, изоляция тенантов.
 - **Протоколы**: REST для управления, WebSocket для real-time событий, webhooks для асинхронных уведомлений.
 - **Compliance**: соответствие 152-ФЗ, локализация биометрических данных, явные согласия.
+
+## Задание 4 — Защита доступа к кластеру Kubernetes (RBAC)
+
+Файлы в `Task4/`:
+- `roles_authority.md` — таблица ролей, прав и групп пользователей.
+- `03_create_users.sh` — создание ServiceAccounts и kubeconfig контекстов.
+- `04_create_roles.sh` — создание Role и ClusterRole.
+- `05_bind_users_to_roles.sh` — привязка пользователей к ролям.
+
+### Архитектура RBAC:
+- **Namespace по доменам**: sales, owners, data, finance, platform.
+- **4 роли**: namespace-viewer (чтение), namespace-configurator (настройка без секретов), namespace-secret-viewer (доступ к секретам), cluster-readonly (кластерный обзор).
+- **Принцип минимальных привилегий**: каждая роль имеет только необходимые права, без wildcards.
+
+### Последовательность запуска:
+```bash
+# 1. Сделать скрипты исполняемыми
+chmod +x Task4/*.sh
+
+# 2. Создать пользователей и namespace
+./Task4/03_create_users.sh
+
+# 3. Создать роли
+./Task4/04_create_roles.sh  
+
+# 4. Привязать пользователей к ролям
+./Task4/05_bind_users_to_roles.sh
+
+# 5. Проверить RBAC (примеры команд в выводе скриптов)
+```
