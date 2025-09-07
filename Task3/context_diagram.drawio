@@ -1,0 +1,101 @@
+<mxGraphModel dx="1198" dy="1697" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="boundary" value="PropDevelopment + Smart Home Services" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+      <mxGeometry x="600" y="40" width="400" height="30" as="geometry" />
+    </mxCell>
+    <object placeholders="1" c4Name="Собственник" c4Type="Person" c4Description="Собственник жилья в комплексах PropDevelopment" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="owner">
+      <mxCell style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" parent="1" vertex="1">
+        <mxGeometry x="700" y="120" width="200" height="180" as="geometry" />
+      </mxCell>
+    </object>
+    <object placeholders="1" c4Name="PropDevelopment Platform" c4Type="Software System" c4Description="Платформа управления недвижимостью и услугами для собственников" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="propdevelopment">
+      <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+        <mxGeometry x="650" y="450" width="300" height="200" as="geometry" />
+      </mxCell>
+    </object>
+    <object placeholders="1" c4Name="Партнёрская платформа Умный дом" c4Type="Software System" c4Description="Внешняя система управления умными устройствами (домофоны, шлагбаумы, распознавание лиц/номеров)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="smarthome">
+      <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+        <mxGeometry x="1150" y="450" width="300" height="200" as="geometry" />
+      </mxCell>
+    </object>
+    <object placeholders="1" c4Name="Интеллектуальный домофон" c4Type="IoT Device" c4Description="Видеодомофон с распознаванием лиц" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="intercom">
+      <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#999999;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#666666;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+        <mxGeometry x="200" y="450" width="240" height="120" as="geometry" />
+      </mxCell>
+    </object>
+    <object placeholders="1" c4Name="Интеллектуальный шлагбаум" c4Type="IoT Device" c4Description="Шлагбаум с распознаванием номеров" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="barrier">
+      <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#999999;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#666666;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+        <mxGeometry x="200" y="600" width="240" height="120" as="geometry" />
+      </mxCell>
+    </object>
+    <object placeholders="1" c4Name="Посетитель/Гость" c4Type="Person" c4Description="Гости собственников, курьеры, подрядчики" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="visitor">
+      <mxCell style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#6C6477;strokeColor=#4D4661;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" parent="1" vertex="1">
+        <mxGeometry x="220" y="200" width="200" height="180" as="geometry" />
+      </mxCell>
+    </object>
+    <mxCell id="r1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="owner" target="propdevelopment" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="r1-label" value="Управляет доступом&lt;br&gt;через мобильное приложение&lt;br&gt;[HTTPS/REST]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="r1" connectable="0" vertex="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint y="25" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="r2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="propdevelopment" target="smarthome" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="r2-label" value="Управляет устройствами,&lt;br&gt;синхронизация прав доступа&lt;br&gt;[HTTPS/REST API, WebSocket]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="r2" connectable="0" vertex="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="r3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="smarthome" target="intercom" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1250" y="350" />
+          <mxPoint x="480" y="350" />
+          <mxPoint x="480" y="500" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="r3-label" value="Управляет, получает события&lt;br&gt;[MQTT/CoAP]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="r3" connectable="0" vertex="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="230" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="r4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="smarthome" target="barrier" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1250" y="750" />
+          <mxPoint x="480" y="750" />
+          <mxPoint x="480" y="660" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="r4-label" value="Управляет, получает события&lt;br&gt;[MQTT/CoAP]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="r4" connectable="0" vertex="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="-50" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="r5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="visitor" target="intercom" edge="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="r5-label" value="Использует для&lt;br&gt;вызова/идентификации" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="r5" connectable="0" vertex="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint y="5" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="r6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="visitor" target="barrier" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="320" y="400" />
+          <mxPoint x="140" y="400" />
+          <mxPoint x="140" y="660" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="r6-label" value="Проезжает через" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="r6" connectable="0" vertex="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+  </root>
+</mxGraphModel>
