@@ -88,3 +88,37 @@ chmod +x Task4/*.sh
 
 # 5. Проверить RBAC (примеры команд в выводе скриптов)
 ```
+
+## Задание 5 — Управление трафиком внутри кластера Kubernetes (NetworkPolicies)
+
+Файл: `Task5/non-admin-api-allow.yaml` — сетевые политики для разграничения трафика.
+
+### Архитектура сегментации:
+- **Разрешённые пары**: front-end ↔ back-end-api, admin-front-end ↔ admin-back-end-api
+- **Запрещено**: все остальные соединения (default deny)
+- **Изоляция**: каждый сервис может общаться только со своей парой
+
+### Последовательность запуска:
+```bash
+# 1. Развернуть 4 сервиса с метками ролей
+kubectl run front-end-app --image=nginx --labels role=front-end --expose --port 80
+kubectl run back-end-api-app --image=nginx --labels role=back-end-api --expose --port 80
+kubectl run admin-front-end-app --image=nginx --labels role=admin-front-end --expose --port 80
+kubectl run admin-back-end-api-app --image=nginx --labels role=admin-back-end-api --expose --port 80
+
+# 2. Применить сетевые политики
+kubectl apply -f Task5/non-admin-api-allow.yaml
+
+# 3. Проверить развёртывание
+kubectl get pods -o wide
+kubectl get svc
+kubectl get networkpolicies
+
+# 4. Тестировать связность (разрешённые пары)
+kubectl run test-frontend --rm -i -t --image=alpine --labels role=front-end -- sh
+# В контейнере: wget -qO- --timeout=2 http://back-end-api-app
+
+# 5. Тестировать изоляцию (запрещённые соединения)
+kubectl run test-isolation --rm -i -t --image=alpine -- sh  
+# В контейнере: wget -qO- --timeout=2 http://admin-back-end-api-app  # должно не работать
+```
