@@ -122,3 +122,46 @@ kubectl run test-frontend --rm -i -t --image=alpine --labels role=front-end -- s
 kubectl run test-isolation --rm -i -t --image=alpine -- sh  
 # В контейнере: wget -qO- --timeout=2 http://admin-back-end-api-app  # должно не работать
 ```
+
+## Задание 6 — Аудит активности пользователей и обнаружение инцидентов
+
+Примечание: скрипты, описанные в задании изменены на основе обсуждения в Пачке тут: https://app.pachca.com/chats/26366223?message=615699060
+
+Файлы в `Task6/`:
+- `audit-policy.yaml` — политика аудита API‑сервера
+- `setup_minikube.sh` — старт Minikube с подключением политики аудита
+- `simulate_security_incident_reworked.sh` — сценарий генерации событий (эмулирует инциденты)
+- `collect_audit.sh` — сбор журнала аудита из pod `kube-apiserver`
+- `filter_audit.sh` — быстрая фильтрация событий (jq)
+- `analyze_audit.py` — анализатор; формирует `audit-extract.json` и `analysis.md`
+
+### Последовательность запуска:
+```bash
+cd Task6
+chmod +x setup_minikube.sh simulate_security_incident_reworked.sh filter_audit.sh collect_audit.sh
+
+# 1) Запуск Minikube с включённым аудитом
+./setup_minikube.sh
+
+# 2) Симуляция инцидентов (генерирует события аудита)
+bash simulate_security_incident_reworked.sh
+
+# 3) Сбор журнала аудита API‑сервера в локальный файл
+./collect_audit.sh audit.log
+
+# 4a) Быстрая фильтрация (создаст JSON‑файлы в ./out/)
+./filter_audit.sh audit.log out
+
+# 4b) Полный анализ (создаст audit-extract.json и analysis.md)
+python3 analyze_audit.py audit.log
+```
+
+### Ожидаемые артефакты:
+- `Task6/audit.log` — журнал Kubernetes API audit
+- `Task6/out/*.json` — выборки по категориям (secrets, exec, privileged pods, RBAC)
+- `Task6/audit-extract.json` — агрегированный список подозрительных событий
+- `Task6/analysis.md` — отчёт по шаблону из задания
+
+Примечания:
+- Требуются установленные `jq` и `python3`.
+- По умолчанию лог пишется в stdout apiserver (`audit-log-path=-`) и собирается через `kubectl logs`.

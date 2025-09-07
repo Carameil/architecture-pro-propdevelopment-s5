@@ -1,0 +1,56 @@
+[
+  {
+    "category": "rolebinding_cluster_admin",
+    "roleRef": {
+      "apiGroup": "rbac.authorization.k8s.io",
+      "kind": "ClusterRole",
+      "name": "cluster-admin"
+    },
+    "verb": "create",
+    "namespace": "secure-ops",
+    "resource": "rolebindings",
+    "subresource": null,
+    "objectRef": {
+      "resource": "rolebindings",
+      "namespace": "secure-ops",
+      "name": "escalate-binding",
+      "apiGroup": "rbac.authorization.k8s.io",
+      "apiVersion": "v1"
+    },
+    "user": "minikube-user",
+    "userAgent": "kubectl/v1.34.0 (linux/amd64) kubernetes/f28b4c9",
+    "stage": "ResponseComplete",
+    "requestURI": "/apis/rbac.authorization.k8s.io/v1/namespaces/secure-ops/rolebindings?fieldManager=kubectl-client-side-apply&fieldValidation=Strict",
+    "sourceIPs": [
+      "192.168.49.1"
+    ],
+    "responseCode": 201
+  },
+  {
+    "category": "rolebinding_cluster_admin",
+    "roleRef": {
+      "apiGroup": "rbac.authorization.k8s.io",
+      "kind": "ClusterRole",
+      "name": "cluster-admin"
+    },
+    "verb": "create",
+    "namespace": "kube-system",
+    "resource": "rolebindings",
+    "subresource": null,
+    "objectRef": {
+      "resource": "rolebindings",
+      "namespace": "kube-system",
+      "name": "escalate-binding-kube-system",
+      "apiGroup": "rbac.authorization.k8s.io",
+      "apiVersion": "v1"
+    },
+    "user": "minikube-user",
+    "userAgent": "kubectl/v1.34.0 (linux/amd64) kubernetes/f28b4c9",
+    "stage": "ResponseComplete",
+    "requestURI": "/apis/rbac.authorization.k8s.io/v1/namespaces/kube-system/rolebindings?fieldManager=kubectl-client-side-apply&fieldValidation=Strict",
+    "sourceIPs": [
+      "192.168.49.1"
+    ],
+    "responseCode": 201
+  }
+]
