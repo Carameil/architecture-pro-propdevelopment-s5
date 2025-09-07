@@ -165,3 +165,38 @@ python3 analyze_audit.py audit.log
 Примечания:
 - Требуются установленные `jq` и `python3`.
 - По умолчанию лог пишется в stdout apiserver (`audit-log-path=-`) и собирается через `kubectl logs`.
+
+## Задание 7 — Аудит и соответствие политике безопасности контейнеров (PodSecurity/OPA Gatekeeper)
+
+Файлы в `Task7/`:
+- `01-create-namespace.yaml` — namespace `audit-zone` с PodSecurity `restricted`
+- `insecure-manifests/` — три небезопасных pod‑манифеста (privileged, hostPath, root)
+- `secure-manifests/` — безопасные версии pod‑манифестов
+- `gatekeeper/constraint-templates/*` и `gatekeeper/constraints/*` — шаблоны и правила Gatekeeper
+- `verify/*.sh` — скрипты проверки
+
+### Последовательность запуска:
+```bash
+# (Убедитесь, что Gatekeeper установлен; при наличии аддона)
+# minikube addons enable gatekeeper
+# (Если нет, то делаем):
+# kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.17/deploy/gatekeeper.yaml
+# kubectl -n gatekeeper-system rollout status deploy/gatekeeper-controller-manager --timeout=180s
+# kubectl wait --for=condition=Established crd/constrainttemplates.templates.gatekeeper.sh --timeout=180s
+
+# 1) Пространство имён с PodSecurity restricted
+kubectl apply -f Task7/01-create-namespace.yaml
+
+# 2) Политики Gatekeeper и валидация безопасных манифестов
+chmod +x Task7/verify/*.sh
+Task7/verify/validate-security.sh
+
+# 3) Проверка отклонения небезопасных манифестов
+Task7/verify/verify-admission.sh
+```
+
+Ожидаемо:
+- Небезопасные pod’ы отклоняются Admission (PodSecurity/Gatekeeper)
+- Безопасные pod’ы проходят валидацию
+
+![img.png](images/task7_output.png)

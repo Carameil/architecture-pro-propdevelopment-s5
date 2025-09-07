@@ -1,0 +1,19 @@
+apiVersion: audit.k8s.io/v1
+kind: Policy
+rules:
+  # Логируем операции над Pod (важно для валидации безопасной конфигурации)
+  - level: RequestResponse
+    verbs: ["create", "update", "patch", "delete"]
+    resources:
+      - group: ""
+        resources: ["pods"]
+
+  # Базовое логирование метаданных по остальным операциям
+  - level: Metadata
+    verbs: ["*"]
+    resources:
+      - group: ""
+        resources: ["*"]
+      - group: "rbac.authorization.k8s.io"
+        resources: ["*"]
+
